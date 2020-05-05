@@ -1,0 +1,12 @@
+
+
+<div class="container">
+    <section class="content">
+     <app-search (messageEvent) = recieveMessage($event)></app-search>
+     <app-list-coins  (messageEvent) = loadMore($event) *ngIf="coinsList.length" [coinsList]="coinsList"></app-list-coins>
+      <!-- /.container -->
+    </section>
+  </div>
+  
+  <!-- <app-footer></app-footer> -->
+  
