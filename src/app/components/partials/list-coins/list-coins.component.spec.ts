@@ -42,7 +42,6 @@ describe('SearchComponent', () => {
 
   it('list component should have length 5 after load more', () => {
     const compiled = fixture.nativeElement;
-    // component.loadMore();
     compiled.querySelector('.load_more').click();
     fixture.detectChanges();
     expect(compiled.querySelector('tbody').children.length).toBe(5);
