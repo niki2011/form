@@ -57,7 +57,6 @@ export class CoinDetailsService {
 
     const endpoint = 'https://api.coingecko.com/api/v3/coins/' + coin.id;
 
-    // this.logService.log('Called endpoint for submitFormFaultReport():', endpoint);
 
     return this.http.post(endpoint, coin, {
       headers: new HttpHeaders({

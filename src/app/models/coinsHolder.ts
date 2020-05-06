@@ -1,10 +1,10 @@
-import { Coin } from "./coin";
+import { Coin } from './coin';
 
 export class CoinsHolder {
   public coinList: Array<Coin> = [];
   public coinListCopy: Array<Coin> = [];
   public renderList: Array<Coin> = [];
-  private n = 3;
+  private n = 20;
   constructor(coins) {
     this.coinList = [...coins];
     this.coinListCopy = [...coins];

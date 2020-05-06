@@ -27,7 +27,6 @@ export class CoinsService {
   getCoins(): Observable<CoinsHolder> {
     return this.init().pipe(
       map(result => {
-        console.log('result:  ', result);
         const coins = result.map(coin => new Coin(coin));
         return new CoinsHolder(coins);
       })

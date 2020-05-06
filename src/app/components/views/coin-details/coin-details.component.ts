@@ -3,9 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CoinDetailsService } from 'src/app/services/coin-details.service';
 
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ValidatePhone } from 'src/app/validators/phone.validator';
 import { ValidateString } from 'src/app/validators/string.validator';
-import { ValidateMessage } from 'src/app/validators/message.validator';
 
 import { CoinDetails } from 'src/app/models/coinDetails';
 
@@ -38,10 +36,8 @@ export class CoinDetailsComponent implements OnInit {
       // phoneNumber: ['', [Validators.required, ValidatePhone]],
     });
     this.route.params.subscribe(params => {
-      console.log('params.id:  ', params.id); // --> Name must match wanted parameter
       this.coinDetailsService.getCoinDetails(params.id).subscribe(
         (coin: CoinDetails) => {
-          console.log('coinDetailsService11:  ', coin);
           this.formErrorMsg = '';
           this.faultSubmitForm.setValue(coin);
 
@@ -60,13 +56,9 @@ export class CoinDetailsComponent implements OnInit {
       symbol: this.faultSubmitForm.value.symbol.toString().trim(),
       name: this.faultSubmitForm.value.name.toString().trim(),
     };
-    console.log('submit');
-    console.log(coin);
 
     this.coinDetailsService.submitFormFaultReport(coin).subscribe(res => {
-      console.log('success');
     }, err => {
-      console.log('submit error');
       this.formErrorMsg = 'Submit error';
       // console.error(err);
     }

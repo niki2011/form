@@ -20,13 +20,11 @@ export class HomeComponent implements OnInit {
 
     this.coinService.getCoins().subscribe(
       coins => {
-        console.log('coins:  ', coins);
-        console.log('coins:  ', coins.list());
         this.coins = coins;
         this.coinsList = coins.list();
       },
       error => {
-        console.log('home.component ceategorysService.listenMessage', error);
+        console.error('home.component ceategorysService.listenMessage', error);
       });
   }
 

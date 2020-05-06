@@ -15,7 +15,6 @@ export class ListCoinsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('coinsList:  ', this.coinsList);
   }
 
   loadMore() {
